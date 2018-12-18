@@ -4,6 +4,8 @@ services:
     build: ./
     image: parser-server
     container_name: parser-server
+    ports:
+      - "${APP_PORT}:1337"
     environment:
       APP_ID: '${APP_ID}'
       MASTER_KEY: '${MASTER_KEY}'
