@@ -5,8 +5,8 @@ services:
     image: parser-server
     container_name: parser-server
     environment:
-      APP_ID: '${MYSQL_DATABASE}'
-      MASTER_KEY: '${MYSQL_PASSWORD}'
-      DATABASE_URI: '${DB_PATH}'
-      PARSE_MOUNT: '/parse'
+      APP_ID: '${APP_ID}'
+      MASTER_KEY: '${MASTER_KEY}'
+      DATABASE_URI: '${DATABASE_URI}'
+      PARSE_MOUNT: '${PARSE_MOUNT}'
     restart: always
