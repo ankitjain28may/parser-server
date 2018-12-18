@@ -3,17 +3,17 @@ services:
 - docker
 addons:
   ssh_known_hosts: 52.13.20.197
-script:
-- cp .env.travis .env
-- docker-compose up -d
+# script:
+# - cp .env.travis .env
+# - docker-compose up -d
 before_install:
 - openssl aes-256-cbc -K $encrypted_901d321fc196_key -iv $encrypted_901d321fc196_iv
   -in deploy.pem.enc -out deploy.pem -d
 after_success:
 - eval "$(ssh-agent -s)"
-- chmod 600 ./deploy_key
+- chmod 600 ./deploy.pem
 - echo -e "Host 52.13.20.197\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
-- ssh-add ./deploy_key
+- ssh-add ./deploy.pem
 - cd /var/www/parser-server
 - sudo git checkout master
 - sudo git pull origin master
