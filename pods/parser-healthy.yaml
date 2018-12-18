@@ -11,20 +11,18 @@ spec:
       ports:
         - name: http
           containerPort: 1337
-        - name: health
-          containerPort: 81
       livenessProbe:
         httpGet:
-          path: /healthz
-          port: 81
+          path: /
+          port: 1337
           scheme: HTTP
         initialDelaySeconds: 5
         periodSeconds: 15
         timeoutSeconds: 5
       readinessProbe:
         httpGet:
-          path: /readiness
-          port: 81
+          path: /
+          port: 1337
           scheme: HTTP
         initialDelaySeconds: 5
         timeoutSeconds: 1
