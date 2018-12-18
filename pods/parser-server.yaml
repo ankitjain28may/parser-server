@@ -8,15 +8,8 @@ spec:
   containers:
     - name: parser-server
       image: gcr.io/qwiklabs-gcp-9190be42502290e5/parser-server:v1
-      args:
-        - "-http=0.0.0.0:1337"
-        - "-health=0.0.0.0:81"
-        - "-secret=secret"
       ports:
-        - name: http
-          containerPort: 1337
-        - name: health
-          containerPort: 81
+        - containerPort: 1337
       resources:
         limits:
           cpu: 0.2
