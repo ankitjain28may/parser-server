@@ -3,9 +3,6 @@ services:
 - docker
 addons:
   ssh_known_hosts: 52.13.20.197
-# script:
-# - cp .env.travis .env
-# - docker-compose up -d
 before_install:
 - openssl aes-256-cbc -K $encrypted_901d321fc196_key -iv $encrypted_901d321fc196_iv
   -in deploy.pem.enc -out deploy.pem -d
