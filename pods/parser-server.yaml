@@ -10,7 +10,3 @@ spec:
       image: gcr.io/qwiklabs-gcp-9190be42502290e5/parser-server:v1
       ports:
         - containerPort: 1337
-      resources:
-        limits:
-          cpu: 0.2
-          memory: "10Mi"
