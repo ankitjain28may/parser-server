@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: parser-server-healthy
+  labels:
+    app: parser-server
+spec:
+  containers:
+    - name: parser-server-healthy
+      image: gcr.io/qwiklabs-gcp-9190be42502290e5/parser-server:v1
+      ports:
+        - name: http
+          containerPort: 1337
+        - name: health
+          containerPort: 81
+      livenessProbe:
+        httpGet:
+          path: /healthz
+          port: 81
+          scheme: HTTP
+        initialDelaySeconds: 5
+        periodSeconds: 15
+        timeoutSeconds: 5
+      readinessProbe:
+        httpGet:
+          path: /readiness
+          port: 81
+          scheme: HTTP
+        initialDelaySeconds: 5
+        timeoutSeconds: 1
