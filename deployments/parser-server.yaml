@@ -1,4 +1,4 @@
-apiVersion: v1
+apiVersion: parse-server/v1
 kind: Deployment
 metadata:
   name: parser-server-deployment
