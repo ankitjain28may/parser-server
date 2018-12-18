@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: "parser-server"
+spec:
+  selector:
+    app: "parser-server"
+  ports:
+    - protocol: "TCP"
+      port: 1337
+      targetPort: 1337
+      nodePort: 31000
+  type: NodePort
