@@ -11,4 +11,4 @@ after_success:
 - chmod 600 ./deploy.pem
 - echo -e "Host 52.13.20.197\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 - ssh-add ./deploy.pem
-- ./travis/travis-deploy.sh || travis_terminate 1;
+- sudo ./travis/travis-deploy.sh || travis_terminate 1;
