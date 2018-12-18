@@ -11,7 +11,4 @@ after_success:
 - chmod 600 ./deploy.pem
 - echo -e "Host 52.13.20.197\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 - ssh-add ./deploy.pem
-- cd /var/www/parser-server
-- sudo git checkout master
-- sudo git pull origin master
-- sudo docker-compose up -d
+- ./travis/travis-deploy.sh || travis_terminate 1;
