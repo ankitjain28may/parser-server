@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Deployment
+metadata:
+  name: parser-server-deployment
+  labels:
+    app: parse-server
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: parse-server
+  template:
+    metadata:
+      labels:
+        app: parse-server
+    spec:
+      containers:
+      - name: parser-server
+        image: gcr.io/qwiklabs-gcp-9190be42502290e5/parser-server:v1
+        ports:
+          - containerPort: 1337
