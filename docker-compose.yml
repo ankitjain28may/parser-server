@@ -1,0 +1,12 @@
+version: '2'
+services:
+  parser-server:
+    build: ./
+    image: parser-server
+    container_name: parser-server
+    environment:
+      APP_ID: '${MYSQL_DATABASE}'
+      MASTER_KEY: '${MYSQL_PASSWORD}'
+      DATABASE_URI: '${DB_PATH}'
+      PARSE_MOUNT: '/parse'
+    restart: always
