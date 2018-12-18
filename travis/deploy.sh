@@ -9,4 +9,4 @@ sudo git checkout master
 echo "Pulling changes from Git"
 sudo git pull origin master
 echo "Running docker composer"
-sudo docker-compose up -d
+sudo docker-compose up -d --build
