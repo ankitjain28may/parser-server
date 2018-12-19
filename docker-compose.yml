@@ -5,9 +5,9 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
-        - APP_ID: '${APP_ID}'
-        - MASTER_KEY: '${MASTER_KEY}'
-        - DATABASE_URI: '${DATABASE_URI}'
+        - APP_ID=${APP_ID}
+        - MASTER_KEY=${MASTER_KEY}
+        - DATABASE_URI=${DATABASE_URI}
     image: parser-server
     container_name: parser-server
     volumes:
