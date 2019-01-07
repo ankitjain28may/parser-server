@@ -11,7 +11,7 @@ services:
     image: parser-server
     container_name: parser-server
     volumes:
-      - parser-server-sync:/var/www/parser-server:nocopy
+      - .:/var/www/parser-server
     ports:
       - "${APP_PORT}:1337"
     environment:
@@ -20,6 +20,3 @@ services:
       DATABASE_URI: '${DATABASE_URI}'
       PARSE_MOUNT: '${PARSE_MOUNT}'
     restart: always
-volumes:
-  parser-server-sync:
-    external: true
