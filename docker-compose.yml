@@ -11,7 +11,7 @@ services:
     image: parser-server
     container_name: parser-server
     volumes:
-      - .:/parse
+      - parser-server-sync:/parse:nocopy
       - /parse/node_modules
     ports:
       - "${APP_PORT}:1337"
@@ -21,3 +21,6 @@ services:
       DATABASE_URI: '${DATABASE_URI}'
       PARSE_MOUNT: '${PARSE_MOUNT}'
     restart: always
+volumes:
+  parser-server-sync:
+    external: true
