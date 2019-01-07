@@ -11,7 +11,7 @@ services:
     image: parser-server
     container_name: parser-server
     volumes:
-      - parser-server-sync:/parse:nocopy
+      - parser-server-sync:/parse
       - /parse/node_modules
     ports:
       - "${APP_PORT}:1337"
