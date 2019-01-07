@@ -11,7 +11,7 @@ services:
     image: parser-server
     container_name: parser-server
     volumes:
-      - parser-server-sync:/parse
+      - .:/parse
       - /parse/node_modules
     ports:
       - "${APP_PORT}:1337"
@@ -20,8 +20,4 @@ services:
       MASTER_KEY: '${MASTER_KEY}'
       DATABASE_URI: '${DATABASE_URI}'
       PARSE_MOUNT: '${PARSE_MOUNT}'
-    command: [sh, -c, "npm install && npm start"]
     restart: always
-volumes:
-  parser-server-sync:
-    external: true
