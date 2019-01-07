@@ -2,7 +2,7 @@ FROM node:latest
 
 RUN mkdir parse
 
-ADD . /parse
+ADD ./package.json /parse
 WORKDIR /parse
 RUN npm install
 

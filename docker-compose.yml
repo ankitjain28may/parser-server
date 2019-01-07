@@ -11,7 +11,7 @@ services:
     image: parser-server
     container_name: parser-server
     volumes:
-      - .:/var/www/parser-server
+      - .:/parse
     ports:
       - "${APP_PORT}:1337"
     environment:
